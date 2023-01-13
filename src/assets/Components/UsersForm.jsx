@@ -2,7 +2,7 @@ import React from 'react';
 import { useForm } from 'react-hook-form';
 
 const UsersForm = () => {
-    
+
     const {handleSubmit, register} = useForm()
 
     const submit =(data) =>{
@@ -12,7 +12,7 @@ const UsersForm = () => {
         <form onSubmit={handleSubmit(submit)}>
             <div className="input-container">
                 <label htmlFor="email">Email</label>
-                <input type="text" id='email' {...register("email")} />
+                <input type="text" id='email' {...register("email")}/>
             </div>
             <div className="input-container">
                 <label htmlFor="password">Password</label>
