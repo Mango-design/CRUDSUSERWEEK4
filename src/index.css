@@ -13,6 +13,9 @@ body{
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     
 }
+
+/* ----------------User Forms */
+
 .form{
     width: 300px;
     height: 550px;
@@ -32,6 +35,20 @@ body{
     display: flex;
     flex-direction: column;
 }
+.form > button{
+    height: 35px;
+    background: #555A88;
+    color: white;
+    border: none;
+    border-radius: 10px;
+
+}
+.form > button:hover{
+    background-color: violet;
+    scale: 105%;
+    box-shadow: 2px 5px 12px lightblue;
+   
+}
 .fa-x{
     position: absolute;
     right: 20px;
@@ -43,4 +60,11 @@ input{
     border-radius: 6px;
     background: #F9FAFC;
     padding: 10px;
+}
+
+/* ---------Check------------------- */
+
+
+.box{
+    
 }

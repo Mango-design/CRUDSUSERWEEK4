@@ -12,7 +12,7 @@ const UsersForm = () => {
         <form onSubmit={handleSubmit(submit)}>
             <div className='form'>
              <i class="fa-solid fa-x"></i>
-                <h1>Nuevo Usuario</h1>
+             <h1>Nuevo Usuario</h1>
             <div className="input-container">
                 <label htmlFor="email">Email</label>
                 <input type="text" id='email' {...register("email")} placeholder='Email'/>
