@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import './App.css'
 import axios from 'axios';
+import UsersForm from './assets/Components/UsersForm';
 
 function App() {
 
@@ -15,6 +16,7 @@ function App() {
   return (
     <div className="App">
       PAPALOS
+      <UsersForm/>
     </div>
   )
 }
