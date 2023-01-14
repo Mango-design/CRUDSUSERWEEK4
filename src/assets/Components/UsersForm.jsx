@@ -14,9 +14,13 @@ const UsersForm = ({getusers, userSelected}) => {
     },[userSelected])
 
     const submit =(data) =>{
-        
-        axios.post('https://users-crud.academlo.tech/users/', data)
-        .then (() => getusers());
+        if (userSelected) {
+            axios.put(`https://users-crud.academlo.tech/users/${userSelected.id}/`,data)
+            .then(()=>getusers());
+        }else{
+            axios.post('https://users-crud.academlo.tech/users/', data)
+            .then (() => getusers());
+        }
     }
     return (
         <form onSubmit={handleSubmit(submit)}>

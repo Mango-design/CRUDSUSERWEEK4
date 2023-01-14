@@ -24,6 +24,7 @@ const UserList = ({ userList, selectUser }) => {
 
                             </ul>
                             <button onClick={() =>selectUser(user)}>select</button>
+                            <button>BORRRRRRRRAR ALVVVVVVVVVVVVVVVVVVV</button>
                         </li>
                     ))
                 }
