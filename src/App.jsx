@@ -13,6 +13,11 @@ function App() {
     .then(res => setUserList (res.data));
   }, [])
   
+  const getusers = () =>{
+    axios.get('https://users-crud.academlo.tech/users/')
+    .then (res => setUserList(res.data));
+  }
+
   console.log(userList);
 
 {/*
@@ -30,7 +35,7 @@ function App() {
   return (
     <div className="App">
       {/*<button onClick={()=>usuarioEliminado()}>Eliminar usuario</button>*/}
-      <UsersForm/>
+      <UsersForm getusers = {getusers} />
       <UserList userList= {userList} />
     </div>
   )

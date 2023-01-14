@@ -2,14 +2,14 @@ import axios from 'axios';
 import React from 'react';
 import { useForm } from 'react-hook-form';
 
-const UsersForm = () => {
+const UsersForm = (getusers) => {
 
     const {handleSubmit, register} = useForm()
 
     const submit =(data) =>{
         console.log(data);
         axios.post('https://users-crud.academlo.tech/users/', data)
-        .then (res => console.log(res.data));
+        .then (() => getusers);
     }
     return (
         <form onSubmit={handleSubmit(submit)}>
