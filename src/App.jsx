@@ -7,7 +7,7 @@ import UserList from './assets/Components/UserList';
 function App() {
 
   const [ userList, setUserList] = useState([]);
-
+  const [ userSelected, setUserSelected] = useState(null);
   useEffect(() =>{
     axios.get('https://users-crud.academlo.tech/users/')
     .then(res => setUserList (res.data));
@@ -18,8 +18,12 @@ function App() {
     .then (res => setUserList(res.data));
   }
 
-  console.log(userList);
+  const selectUser = (user) =>{
+    setUserSelected(user)
+  }
 
+
+  console.log(userSelected);
 {/*
   const usuarioEliminado =() =>{
     swal({
@@ -35,8 +39,8 @@ function App() {
   return (
     <div className="App">
       {/*<button onClick={()=>usuarioEliminado()}>Eliminar usuario</button>*/}
-      <UsersForm getusers = {getusers} />
-      <UserList userList= {userList} getusers= {getusers} />
+      <UsersForm getusers = {getusers} userSelected ={userSelected} />
+      <UserList userList= {userList} getusers= {getusers} selectUser= {selectUser} />
       {/* <UsersForm/> */}
       
     </div>

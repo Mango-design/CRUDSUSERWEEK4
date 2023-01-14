@@ -1,6 +1,6 @@
 import React from 'react';
 
-const UserList = ({ userList }) => {
+const UserList = ({ userList, selectUser }) => {
     return (
         
         <div className='userList'>
@@ -17,6 +17,7 @@ const UserList = ({ userList }) => {
                                 <li> <b>PassWord :</b> {user.password}</li>
                                 <li><b>Birthday :</b> {user.birthday}</li>
                             </ul>
+                            <button onClick={() =>selectUser(user)}>select</button>
                         </li>
                     ))
                 }

@@ -1,10 +1,17 @@
 import axios from 'axios';
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 
-const UsersForm = ({getusers}) => {
+const UsersForm = ({getusers, userSelected}) => {
 
-    const {handleSubmit, register} = useForm()
+    const {handleSubmit, register, reset} = useForm()
+
+    useEffect(() =>{
+        if (userSelected !== null) {
+            alert("usuario seleccionado")
+            reset(userSelected)
+        }
+    },[userSelected])
 
     const submit =(data) =>{
         
@@ -18,23 +25,23 @@ const UsersForm = ({getusers}) => {
              <h1>Nuevo Usuario</h1>
             <div className="input-container">
                 <label htmlFor="email">Email</label>
-                <input type="text" id='email' {...register("email")} placeholder='Email'/>
+                <input type="text" id='email' {...register("email")} placeholder='Email' required />
             </div>
             <div className="input-container">
                 <label htmlFor="password">Password</label>
-                <input type="password" id='password' {...register("password")} placeholder='Password' />
+                <input type="password" id='password' {...register("password")} placeholder='Password'required />
             </div>
             <div className="input-container">
                 <label htmlFor="first_name">First-Name</label>
-                <input type="text" id='first_name' {...register("first_name")} placeholder='First-Name' />
+                <input type="text" id='first_name' {...register("first_name")} placeholder='First-Name'required />
             </div>
             <div className="input-container">
                 <label htmlFor="last_name">last-name</label>
-                <input type="text" id='last_name' {...register("last_name")} placeholder='Last-Name'/>
+                <input type="text" id='last_name' {...register("last_name")} placeholder='Last-Name'required/>
             </div>
             <div className="input-container">
                 <label htmlFor="birthday">Birthday</label>
-                <input type="date" id='birthday' {...register("birthday")}  placeholder='Birthday'/>   
+                <input type="date" id='birthday' {...register("birthday")}  placeholder='Birthday'required/>   
             </div>
             <button>submit</button>
             
