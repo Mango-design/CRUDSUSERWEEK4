@@ -7,8 +7,13 @@ const UserList = ({userList}) => {
             <ul>
                 {
                     userList.map(user =>(
-                        <li>
-                            <h4> {user.email} {user.password} {user.first_name} {user.last_name} {user.birthday} </h4>
+                        <li key={user.id}>
+                            <h4>  {user.first_name} {user.last_name}  </h4>
+                            <ul>
+                                <li> <b>Email :</b> {user.email} </li>
+                                <li> <b>PassWord :</b> {user.password}</li>
+                                <li><b>Birthday :</b> {user.birthday}</li>
+                            </ul>
                         </li>
                     ))
                 }
