@@ -34,8 +34,10 @@ const UsersForm = () => {
                 <input type="date" id='birthday' {...register("birthday")}  placeholder='Birthday'/>   
             </div>
             <button>submit</button>
-            </div>
             
+           
+            </div>
+           
         </form>
     );
 };
