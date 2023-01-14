@@ -24,9 +24,23 @@
     position: relative;
     display: flex;
     flex-direction: column;
+    
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-size: 18px;
+    padding: 50px;
 }
+.userList_container_title{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+
+}
+.create{
+  width:200px ;
+}
+
+
 .userList hr{
     width: 90%;
     opacity: 0.3;
@@ -36,14 +50,12 @@
     
 
 }
-.userList h1 {
-    padding: 0 50px 50px 40px;
-}
+
 
 .userList ul {
     list-style: none;
     display: grid;
-    height: 250px;
+    height: 280px;
     grid-template-columns: 1fr 1fr 1fr;
     
     
@@ -53,9 +65,6 @@
 .userList ul li {
     display: flex;
     flex-direction: column;
-
-   
-
     margin: 10px;
 
 }
@@ -82,6 +91,29 @@
 .name{
     font-size: 20px;
     text-align: center;
+}
+.Container_buttons{
+    display: flex;
+    flex-direction: row-reverse ;
+    gap: 10px;
+    padding: 5px;
+}
+.Container_buttons > button{
+    width: 35px;
+    height: 40px;
+    border:solid 0.3px #C3C1C1 ;
+    border-radius: 5px;
+
+}
+.fa-pencil{
+    color: grey;
+}
+.trash{
+    background-color: rgb(211, 51, 12)  ;
+    border:none;
+}
+.fa-trash-can{
+    color: white;
 }
 
 
@@ -115,7 +147,7 @@
     flex-direction: column;
 }
 
-.form>button {
+.form>.submit {
     height: 35px;
     background: #555A88;
     color: white;
@@ -124,18 +156,21 @@
 
 }
 
-.form>button:hover {
+.form> .submit:hover {
     background-color: violet;
     scale: 105%;
     box-shadow: 2px 5px 12px lightblue;
 
 }
-
-.fa-x {
+.close{
     position: absolute;
     right: 20px;
     top: 20px;
+    background-color: transparent;
+    border: none;
+
 }
+
 
 input {
     height: 30px;
@@ -143,4 +178,8 @@ input {
     border-radius: 6px;
     background: #F9FAFC;
     padding: 10px;
+}
+
+.hiden{
+    display: none;
 }

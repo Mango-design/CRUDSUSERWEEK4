@@ -4,7 +4,10 @@ const UserList = ({ userList, selectUser }) => {
     return (
 
         <div className='userList'>
-            <h1>UserList</h1>
+            <div className='userList_container_title'>
+                <h1>UserList</h1>
+                <button className='create'><i className="fa-solid fa-plus"></i> Crear Nuevo Usuario</button>
+            </div>
 
             <ul>
                 {
@@ -16,15 +19,19 @@ const UserList = ({ userList, selectUser }) => {
                                 <hr />
                                 <li> <p className='title'>Correo </p> {user.email} </li>
 
-                                <li> <p className='title'> Cumpleaños</p> 
+                                <li> <p className='title'> Cumpleaños</p>
                                     <div>
                                         <i className="fa-solid fa-gift"></i>  {user.birthday} </div></li>
                                 <hr />
+                                <div className='Container_buttons'>
+                                    <button onClick={() => selectUser(user)}><i className="fa-sharp fa-solid fa-pencil"></i></button>
+                                    <button className='trash' ><i className="fa-solid fa-trash-can"></i></button>
+                                </div>
+
 
 
                             </ul>
-                            <button onClick={() =>selectUser(user)}>select</button>
-                            <button>BORRRRRRRRAR ALVVVVVVVVVVVVVVVVVVV</button>
+
                         </li>
                     ))
                 }
