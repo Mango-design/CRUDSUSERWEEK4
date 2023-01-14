@@ -2,7 +2,7 @@ import React from 'react';
 
 const UserList = ({ userList }) => {
     return (
-        
+
         <div className='userList'>
             <h1>UserList</h1>
 
@@ -12,10 +12,16 @@ const UserList = ({ userList }) => {
                         <li key={user.id}>
 
                             <ul>
-                                <h4>  {user.first_name} {user.last_name}  </h4>
-                                <li> <b>Email :</b> {user.email} </li>
-                                <li> <b>PassWord :</b> {user.password}</li>
-                                <li><b>Birthday :</b> {user.birthday}</li>
+                                <li className='name'> <b> {user.first_name} {user.last_name} </b>  </li>
+                                <hr />
+                                <li> <p className='title'>Correo </p> {user.email} </li>
+
+                                <li> <p className='title'> Cumpleaños</p> 
+                                    <div>
+                                        <i className="fa-solid fa-gift"></i>  {user.birthday} </div></li>
+                                <hr />
+
+
                             </ul>
                         </li>
                     ))

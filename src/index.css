@@ -7,7 +7,7 @@
 .App {
     width: 100%;
     height: 100vh;
-    background-color: whitesmoke;
+    background-color: whitesmoke repeat;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -22,34 +22,40 @@
     width: 98%;
     height: 98vh;
     position: relative;
-    
-
     display: flex;
     flex-direction: column;
-
-
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 18px;
+}
+.userList hr{
+    width: 90%;
+    opacity: 0.3;
+    border: none;
+    background-color: #C3C1C1;
+    height: 1.5px;
+    
 
 }
-
 .userList h1 {
     padding: 0 50px 50px 40px;
 }
 
 .userList ul {
-   
     list-style: none;
     display: grid;
-    
-    height: 200px;
+    height: 250px;
     grid-template-columns: 1fr 1fr 1fr;
     
-
+    
+    
 }
 
 .userList ul li {
     display: flex;
     flex-direction: column;
-    
+
+   
+
     margin: 10px;
 
 }
@@ -57,10 +63,27 @@
 .userList ul>li {
 
     list-style: none;
-    border: line black;
-    background-color: #555A88;
+    
+    padding: 5px;
+    
 
 }
+.title{
+   color: #C3C1C1;
+}
+.userList ul > li > ul{
+    display: flex;
+    flex-direction: column;
+    border: 1px solid RGBA( 169, 169, 169,101 );
+    
+    border-radius: 20px;
+    padding: 5px;
+}
+.name{
+    font-size: 20px;
+    text-align: center;
+}
+
 
 /* ----------------User Forms */
 
