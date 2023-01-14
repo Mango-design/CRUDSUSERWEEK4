@@ -22,7 +22,7 @@ const UsersForm = () => {
             </div>
             <div className="input-container">
                 <label htmlFor="password">Password</label>
-                <input type="passwords" id='password' {...register("password")} placeholder='Password' />
+                <input type="password" id='password' {...register("password")} placeholder='Password' />
             </div>
             <div className="input-container">
                 <label htmlFor="first_name">First-Name</label>
