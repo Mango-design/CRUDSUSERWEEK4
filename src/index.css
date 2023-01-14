@@ -36,16 +36,20 @@
 }
 
 .userList ul {
-    width: 381px;
-    height: 274px;
+   
     list-style: none;
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
+    display: grid;
+    
+    height: 200px;
+    grid-template-columns: 1fr 1fr 1fr;
+    
 
 }
 
 .userList ul li {
+    display: flex;
+    flex-direction: column;
+    
     margin: 10px;
 
 }
