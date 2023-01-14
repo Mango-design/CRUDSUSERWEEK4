@@ -3,6 +3,7 @@ import './App.css'
 import axios from 'axios';
 import UsersForm from './assets/Components/UsersForm';
 import swal from 'sweetalert'
+import UserList from './assets/Components/UserList';
 function App() {
 
   const [ userList, setUserList] = useState([]);
@@ -12,6 +13,8 @@ function App() {
     .then(res => setUserList (res.data));
   }, [])
   
+  console.log(userList);
+
 {/*
   const usuarioEliminado =() =>{
     swal({
@@ -28,6 +31,7 @@ function App() {
     <div className="App">
       {/*<button onClick={()=>usuarioEliminado()}>Eliminar usuario</button>*/}
       <UsersForm/>
+      <UserList userList= {userList} />
     </div>
   )
 }
