@@ -3,7 +3,7 @@ import React from 'react';
 const UserList = ({userList}) => {
     return (
         <div>
-            <h1>CarsList</h1>
+            <h1>UserList</h1>
             <ul>
                 {
                     userList.map(user =>(
