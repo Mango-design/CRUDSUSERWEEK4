@@ -22,11 +22,11 @@ const UsersForm = () => {
             </div>
             <div className="input-container">
                 <label htmlFor="password">Password</label>
-                <input type="text" id='password' {...register("password")} placeholder='Password' />
+                <input type="passwords" id='password' {...register("password")} placeholder='Password' />
             </div>
             <div className="input-container">
                 <label htmlFor="first_name">First-Name</label>
-                <input type="text" id='first-name' {...register("first_name")} placeholder='First-Name' />
+                <input type="text" id='first_name' {...register("first_name")} placeholder='First-Name' />
             </div>
             <div className="input-container">
                 <label htmlFor="last_name">last-name</label>
