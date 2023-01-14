@@ -2,7 +2,7 @@ import React from 'react';
 
 const UserList = ({userList}) => {
     return (
-        <div>
+        <div className='userList'>
             <h1>UserList</h1>
             <ul>
                 {
