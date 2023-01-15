@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import UserList from './UserList';
 
-const UsersForm = ({ getusers, userSelected, setIsVisible, isVisible }) => {
+const UsersForm = ({ getusers, userSelected, setIsVisible, isVisible, change }) => {
 
     const { handleSubmit, register, reset } = useForm()
     const emptyUser ={email: "", password: "", first_name: "", last_name: "", birthday: ""}
@@ -60,7 +60,7 @@ const UsersForm = ({ getusers, userSelected, setIsVisible, isVisible }) => {
                     <label htmlFor="birthday">Birthday</label>
                     <input type="date" id='birthday' {...register("birthday")} placeholder='Birthday' required />
                 </div>
-                <button className='submit'>submit</button>
+                <button onClick={()=>change()} className='submit'>submit</button>
 
 
             </div>

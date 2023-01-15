@@ -4,28 +4,29 @@ import axios from 'axios';
 import UsersForm from './assets/Components/UsersForm';
 import swal from 'sweetalert'
 import UserList from './assets/Components/UserList';
+
 function App() {
 
-  const [ userList, setUserList] = useState([]);
-  const [ userSelected, setUserSelected] = useState(null);
+  const [userList, setUserList] = useState([]);
+  const [userSelected, setUserSelected] = useState(null);
   const [isVisible, setIsVisible] = useState(false)
-  useEffect(() =>{
+  useEffect(() => {
     axios.get('https://users-crud.academlo.tech/users/')
-    .then(res => setUserList (res.data));
+      .then(res => setUserList(res.data));
   }, [])
-  
-  const getusers = () =>{
+
+  const getusers = () => {
     axios.get('https://users-crud.academlo.tech/users/')
-    .then (res => setUserList(res.data));
+      .then(res => setUserList(res.data));
   }
 
-  const selectUser = (user) =>{
+  const selectUser = (user) => {
     setUserSelected(user)
   }
 
 
-  
-{/*
+
+  {/*
   const usuarioEliminado =() =>{
     swal({
       title: "Usuario eliminado",
@@ -36,14 +37,36 @@ function App() {
     });
   }
  */}
-  
+
+
+  const change = () => {
+    swal({
+      title: "Cambios aplicados",
+      text: "",
+      icon: "success",
+      button: "Aceptar"
+
+    });
+  }
+
+  console.log(userList);
   return (
     <div className="App">
+      <div className='box'></div>
+      <div className='box'></div>
+      <div className='box'></div>
+      <div className='box'></div>
+      <div className='box'></div>
+      <div className='box'></div>
+      <div className='box'></div>
+      <div className='box'></div>
+      <div className='box'></div>
       {/*<button onClick={()=>usuarioEliminado()}>Eliminar usuario</button>*/}
-      <UsersForm getusers = {getusers} userSelected ={userSelected} isVisible={isVisible} setIsVisible={setIsVisible} selectUser= {selectUser}/>
-      <UserList userList= {userList} getusers= {getusers} selectUser= {selectUser}   setIsVisible={setIsVisible} />
+      <UsersForm getusers={getusers} userSelected={userSelected} isVisible={isVisible} setIsVisible={setIsVisible} change={change} />
+      <UserList userList={userList} getusers={getusers} selectUser={selectUser} setIsVisible={setIsVisible} />
       {/* <UsersForm/> */}
-      
+
+
     </div>
   )
 }
