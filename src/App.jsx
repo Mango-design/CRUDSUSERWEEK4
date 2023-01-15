@@ -25,26 +25,26 @@ function App() {
   }
 
 
+  console.log(userSelected);
 
-  {/*
-  const usuarioEliminado =() =>{
+  const userEliminated =() =>{
     swal({
-      title: "Usuario eliminado",
-      text: "PaPu",
+      title: "Usuario Eliminado",
+      
       icon: "success",
-      button: "Aceptar"
+      button: 'Aceptar'
 
     });
   }
- */}
+ 
 
 
-  const change = () => {
-    swal({
-      title: "Cambios aplicados",
-      text: "",
-      icon: "success",
-      button: "Aceptar"
+ const change =() =>{
+  swal({
+    title: "Usuario Creado",
+    text: "",
+    icon: "success",
+    button: "Aceptar"
 
     });
   }
@@ -52,18 +52,10 @@ function App() {
   console.log(userList);
   return (
     <div className="App">
-      <div className='box'></div>
-      <div className='box'></div>
-      <div className='box'></div>
-      <div className='box'></div>
-      <div className='box'></div>
-      <div className='box'></div>
-      <div className='box'></div>
-      <div className='box'></div>
-      <div className='box'></div>
-      {/*<button onClick={()=>usuarioEliminado()}>Eliminar usuario</button>*/}
-      <UsersForm getusers={getusers} userSelected={userSelected} isVisible={isVisible} setIsVisible={setIsVisible} change={change} />
-      <UserList userList={userList} getusers={getusers} selectUser={selectUser} setIsVisible={setIsVisible} />
+
+      
+      <UsersForm getusers = {getusers} userSelected ={userSelected} isVisible={isVisible} setIsVisible={setIsVisible} change = {change} />
+      <UserList userList= {userList} getusers= {getusers} selectUser= {selectUser}   setIsVisible={setIsVisible} userEliminated = {userEliminated} />
       {/* <UsersForm/> */}
 
 
