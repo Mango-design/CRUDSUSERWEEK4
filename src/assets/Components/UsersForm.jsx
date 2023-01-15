@@ -2,22 +2,28 @@ import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
 
-const UsersForm = ({ getusers, userSelected }) => {
+const UsersForm = ({ getusers, userSelected, selectUser }) => {
 
     const { handleSubmit, register, reset } = useForm()
     const [isVisible, setIsVisible] = useState(true)
+    const emptyForm = {email: "", password: "", first_name: "", last_name: "", birthday: ""}
 
     useEffect(() => {
         if (userSelected !== null) {
             alert("usuario seleccionado")
             reset(userSelected)
+        }else{
+            reset()
         }
     }, [userSelected])
 
     const submit = (data) => {
         if (userSelected) {
             axios.put(`https://users-crud.academlo.tech/users/${userSelected.id}/`, data)
-                .then(() => getusers());
+                .then(() =>{
+                    getusers()
+                    selectUser(null)
+                } );
         } else {
             axios.post('https://users-crud.academlo.tech/users/', data)
                 .then(() => getusers());

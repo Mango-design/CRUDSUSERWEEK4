@@ -39,7 +39,7 @@ function App() {
   return (
     <div className="App">
       {/*<button onClick={()=>usuarioEliminado()}>Eliminar usuario</button>*/}
-      <UsersForm getusers = {getusers} userSelected ={userSelected} />
+      <UsersForm getusers = {getusers} userSelected ={userSelected} selectUser ={selectUser} />
       <UserList userList= {userList} getusers= {getusers} selectUser= {selectUser} />
       {/* <UsersForm/> */}
       
