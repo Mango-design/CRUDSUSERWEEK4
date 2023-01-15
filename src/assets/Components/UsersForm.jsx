@@ -9,8 +9,8 @@ const UsersForm = ({ getusers, userSelected, setIsVisible, isVisible }) => {
     const emptyUser ={email: "", password: "", first_name: "", last_name: "", birthday: ""}
 
     useEffect(() => {
-        if (userSelected !== null) {
-            alert("usuario seleccionado")
+        if (userSelected) {
+            
             reset(userSelected)
         }else{
             reset(emptyUser)
@@ -35,7 +35,7 @@ const UsersForm = ({ getusers, userSelected, setIsVisible, isVisible }) => {
     return (
         <form onSubmit={handleSubmit(submit)} className={isVisible ? 'a' :'hiden'} >
             <div className='form'>
-                <button className='close' onClick={()=>{setIsVisible(false)}} >
+                <button className='close' onClick={()=>{setIsVisible(!isVisible)}} >
                     <i className="fa-solid fa-x"></i>
                 </button>
 

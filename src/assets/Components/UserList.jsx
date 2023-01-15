@@ -14,10 +14,7 @@ const UserList = ({ userList, selectUser, setIsVisible, getusers }) => {
     const visible = () =>{
         setIsVisible(true)
     }
-    const double = ()=>{
-        visible()
-        selectUser()
-    }
+  
 
     
     const deleteUser = (user) =>{
@@ -52,7 +49,7 @@ const UserList = ({ userList, selectUser, setIsVisible, getusers }) => {
                                         <i className="fa-solid fa-gift"></i>  {user.birthday} </div></li>
                                 <hr />
                                 <div className='Container_buttons'>
-                                    <button onClick={()=>{double()}} ><i className="fa-sharp fa-solid fa-pencil"></i></button>
+                                    <button onClick={()=>{selectUser(user)}} ><i onClick={()=>visible()} className="fa-sharp fa-solid fa-pencil"></i></button>
                                     <button className='trash' onClick={() => deleteUser(user)} ><i className="fa-solid fa-trash-can"></i></button>
                                
                     
