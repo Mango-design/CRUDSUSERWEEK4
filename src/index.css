@@ -66,7 +66,14 @@
     
     
 }
-
+.page{
+    width: 80px;
+    height: 40px;
+    border: none;
+    border-radius: 2px;
+    color: white;
+    background-color: #555A88;
+}
 .userList ul li {
     display: flex;
     flex-direction: column;
