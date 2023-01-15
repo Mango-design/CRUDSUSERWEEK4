@@ -53,8 +53,9 @@ const UserList = ({ userList, selectUser, setIsVisible, getusers }) => {
                                 <hr />
                                 <div className='Container_buttons'>
                                     <button onClick={()=>{double()}} ><i className="fa-sharp fa-solid fa-pencil"></i></button>
-                                    <button className='trash' ><i className="fa-solid fa-trash-can"></i></button>
-                                    <button onClick={() => deleteUser(user)}>este es el puttttttttttttooooooooooooo perrrrrrrrroooo boooooooooootttttttttoooooooooonnnnn que     boooooooorrrrrrrraaaaaaaaaa aaaaaaaaaaa llllllllaaaaaaaaa vvvvvvveeeeeeeeeerrrrrrrrrrgggggaaaaaaaaaa aaaaaaaaaaaaaaaa </button>
+                                    <button className='trash' onClick={() => deleteUser(user)} ><i className="fa-solid fa-trash-can"></i></button>
+                               
+                    
                                 </div>
 
 
