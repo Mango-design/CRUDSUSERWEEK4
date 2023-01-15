@@ -25,22 +25,22 @@ function App() {
 
 
   console.log(userSelected);
-{/*
-  const usuarioEliminado =() =>{
+
+  const userEliminated =() =>{
     swal({
-      title: "Usuario eliminado",
-      text: "PaPu",
-      icon: "success",
-      button: "Aceptar"
+      title: "Eliminar",
+      text: "¿Estas seguro que quieres eliminarlo?",
+      icon: "warning",
+      buttons: ["No", "Si"]
 
     });
   }
- */}
+ 
 
 
  const change =() =>{
   swal({
-    title: "Cambios aplicados",
+    title: "Usuario Creado",
     text: "",
     icon: "success",
     button: "Aceptar"
@@ -53,7 +53,7 @@ function App() {
     <div className="App">
       {/*<button onClick={()=>usuarioEliminado()}>Eliminar usuario</button>*/}
       <UsersForm getusers = {getusers} userSelected ={userSelected} isVisible={isVisible} setIsVisible={setIsVisible} change = {change} />
-      <UserList userList= {userList} getusers= {getusers} selectUser= {selectUser}   setIsVisible={setIsVisible} />
+      <UserList userList= {userList} getusers= {getusers} selectUser= {selectUser}   setIsVisible={setIsVisible} userEliminated = {userEliminated} />
       {/* <UsersForm/> */}
       
     </div>

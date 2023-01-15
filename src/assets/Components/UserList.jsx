@@ -1,7 +1,7 @@
 import axios from 'axios';
 import React, { useState } from 'react';
 
-const UserList = ({ userList, selectUser, setIsVisible, getusers }) => {
+const UserList = ({ userList, selectUser, setIsVisible, getusers, userEliminated }) => {
     const  [page , setPage ]= useState(1)
     const [userForPage, setUserForPage] = useState(9)  
     const lastIndex = userForPage * page
@@ -53,7 +53,7 @@ const UserList = ({ userList, selectUser, setIsVisible, getusers }) => {
                                 <hr />
                                 <div className='Container_buttons'>
                                     <button onClick={()=>{double()}} ><i className="fa-sharp fa-solid fa-pencil"></i></button>
-                                    <button className='trash' onClick={() => deleteUser(user)} ><i className="fa-solid fa-trash-can"></i></button>
+                                    <button className='trash' onClick={() => deleteUser(user)} ><i  onClick={()=>userEliminated()} className="fa-solid fa-trash-can"></i></button>
                                
                     
                                 </div>
