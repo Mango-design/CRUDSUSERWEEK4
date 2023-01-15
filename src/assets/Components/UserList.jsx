@@ -1,6 +1,7 @@
+import axios from 'axios';
 import React, { useState } from 'react';
 
-const UserList = ({ userList, selectUser, setIsVisible }) => {
+const UserList = ({ userList, selectUser, setIsVisible, getusers }) => {
     const  [page , setPage ]= useState(1)
     const [userForPage, setUserForPage] = useState(9)  
     const lastIndex = userForPage * page
@@ -17,6 +18,13 @@ const UserList = ({ userList, selectUser, setIsVisible }) => {
         visible()
         selectUser()
     }
+
+    
+    const deleteUser = (user) =>{
+        axios.delete(`https://users-crud.academlo.tech/users/${user.id}/`)
+        .then(()=>getusers())
+    }
+
     return (
 
         <div className='userList'>
@@ -46,6 +54,7 @@ const UserList = ({ userList, selectUser, setIsVisible }) => {
                                 <div className='Container_buttons'>
                                     <button onClick={()=>{double()}} ><i className="fa-sharp fa-solid fa-pencil"></i></button>
                                     <button className='trash' ><i className="fa-solid fa-trash-can"></i></button>
+                                    <button onClick={() => deleteUser(user)}>este es el puttttttttttttooooooooooooo perrrrrrrrroooo boooooooooootttttttttoooooooooonnnnn que     boooooooorrrrrrrraaaaaaaaaa aaaaaaaaaaa llllllllaaaaaaaaa vvvvvvveeeeeeeeeerrrrrrrrrrgggggaaaaaaaaaa aaaaaaaaaaaaaaaa </button>
                                 </div>
 
 

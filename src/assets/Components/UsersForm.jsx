@@ -6,22 +6,30 @@ import UserList from './UserList';
 const UsersForm = ({ getusers, userSelected, setIsVisible, isVisible }) => {
 
     const { handleSubmit, register, reset } = useForm()
-    
+    const emptyUser ={email: "", password: "", first_name: "", last_name: "", birthday: ""}
 
     useEffect(() => {
         if (userSelected !== null) {
             alert("usuario seleccionado")
             reset(userSelected)
+        }else{
+            reset(emptyUser)
         }
     }, [userSelected])
 
     const submit = (data) => {
         if (userSelected) {
             axios.put(`https://users-crud.academlo.tech/users/${userSelected.id}/`, data)
-                .then(() => getusers());
+                .then(() =>{
+                    getusers()
+                    selectUser(null)
+                } );
         } else {
             axios.post('https://users-crud.academlo.tech/users/', data)
-                .then(() => getusers());
+                .then(() => {
+                    getusers()
+                    reset (emptyUser) 
+                });
         }
     }
     return (
