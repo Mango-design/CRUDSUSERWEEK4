@@ -1,11 +1,12 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
+import UserList from './UserList';
 
-const UsersForm = ({ getusers, userSelected }) => {
+const UsersForm = ({ getusers, userSelected, setIsVisible, isVisible }) => {
 
     const { handleSubmit, register, reset } = useForm()
-    const [isVisible, setIsVisible] = useState(true)
+    
 
     useEffect(() => {
         if (userSelected !== null) {
@@ -55,8 +56,10 @@ const UsersForm = ({ getusers, userSelected }) => {
 
 
             </div>
+            
 
         </form>
+        
     );
 };
 

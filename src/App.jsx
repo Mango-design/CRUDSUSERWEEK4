@@ -8,6 +8,7 @@ function App() {
 
   const [ userList, setUserList] = useState([]);
   const [ userSelected, setUserSelected] = useState(null);
+  const [isVisible, setIsVisible] = useState(true)
   useEffect(() =>{
     axios.get('https://users-crud.academlo.tech/users/')
     .then(res => setUserList (res.data));
@@ -39,8 +40,8 @@ function App() {
   return (
     <div className="App">
       {/*<button onClick={()=>usuarioEliminado()}>Eliminar usuario</button>*/}
-      <UsersForm getusers = {getusers} userSelected ={userSelected} />
-      <UserList userList= {userList} getusers= {getusers} selectUser= {selectUser} />
+      <UsersForm getusers = {getusers} userSelected ={userSelected} isVisible={isVisible} setIsVisible={setIsVisible}/>
+      <UserList userList= {userList} getusers= {getusers} selectUser= {selectUser}   setIsVisible={setIsVisible} />
       {/* <UsersForm/> */}
       
     </div>

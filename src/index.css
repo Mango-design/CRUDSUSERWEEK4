@@ -38,6 +38,11 @@
 }
 .create{
   width:200px ;
+  height: 40px;
+  border: none;
+  border-radius: 2px;
+  color: white;
+  background-color: #555A88;
 }
 
 
