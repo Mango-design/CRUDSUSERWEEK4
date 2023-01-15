@@ -1,19 +1,19 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
+import UserList from './UserList';
 
-const UsersForm = ({ getusers, userSelected, selectUser }) => {
+const UsersForm = ({ getusers, userSelected, setIsVisible, isVisible }) => {
 
     const { handleSubmit, register, reset } = useForm()
-    const [isVisible, setIsVisible] = useState(true)
-    const emptyForm = {email: "", password: "", first_name: "", last_name: "", birthday: ""}
+    const emptyUser ={email: "", password: "", first_name: "", last_name: "", birthday: ""}
 
     useEffect(() => {
         if (userSelected !== null) {
             alert("usuario seleccionado")
             reset(userSelected)
         }else{
-            reset()
+            reset(emptyUser)
         }
     }, [userSelected])
 
@@ -26,7 +26,10 @@ const UsersForm = ({ getusers, userSelected, selectUser }) => {
                 } );
         } else {
             axios.post('https://users-crud.academlo.tech/users/', data)
-                .then(() => getusers());
+                .then(() => {
+                    getusers()
+                    reset (emptyUser) 
+                });
         }
     }
     return (
@@ -61,8 +64,10 @@ const UsersForm = ({ getusers, userSelected, selectUser }) => {
 
 
             </div>
+            
 
         </form>
+        
     );
 };
 

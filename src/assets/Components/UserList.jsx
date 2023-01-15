@@ -1,17 +1,43 @@
-import React from 'react';
+import axios from 'axios';
+import React, { useState } from 'react';
 
-const UserList = ({ userList, selectUser }) => {
+const UserList = ({ userList, selectUser, setIsVisible, getusers }) => {
+    const  [page , setPage ]= useState(1)
+    const [userForPage, setUserForPage] = useState(9)  
+    const lastIndex = userForPage * page
+    const firstIndex = lastIndex - userForPage
+    const userPagined = userList.slice(firstIndex,lastIndex)
+    const totalPage = Math.ceil(userList/userForPage)
+    const pageNumbers = []
+    for (let i = 0; i<=totalPage;i++){
+        pageNumbers.push(i)
+    }
+
+    const visible = () =>{
+        setIsVisible(true)
+    }
+    const double = ()=>{
+        visible()
+        selectUser()
+    }
+
+    
+    const deleteUser = (user) =>{
+        axios.delete(`https://users-crud.academlo.tech/users/${user.id}/`)
+        .then(()=>getusers())
+    }
+
     return (
 
         <div className='userList'>
             <div className='userList_container_title'>
                 <h1>UserList</h1>
-                <button className='create'><i className="fa-solid fa-plus"></i> Crear Nuevo Usuario</button>
+                <button onClick={()=>{setIsVisible(true)}} className='create'><i className="fa-solid fa-plus"></i> Crear Nuevo Usuario</button>
             </div>
 
             <ul>
                 {
-                    userList.map(user => (
+                    userPagined.map(user => (
                         <li key={user.id}>
 
                             <ul>
@@ -24,8 +50,9 @@ const UserList = ({ userList, selectUser }) => {
                                         <i className="fa-solid fa-gift"></i>  {user.birthday} </div></li>
                                 <hr />
                                 <div className='Container_buttons'>
-                                    <button onClick={() => selectUser(user)}><i className="fa-sharp fa-solid fa-pencil"></i></button>
+                                    <button onClick={()=>{double()}} ><i className="fa-sharp fa-solid fa-pencil"></i></button>
                                     <button className='trash' ><i className="fa-solid fa-trash-can"></i></button>
+                                    <button onClick={() => deleteUser(user)}>este es el puttttttttttttooooooooooooo perrrrrrrrroooo boooooooooootttttttttoooooooooonnnnn que     boooooooorrrrrrrraaaaaaaaaa aaaaaaaaaaa llllllllaaaaaaaaa vvvvvvveeeeeeeeeerrrrrrrrrrgggggaaaaaaaaaa aaaaaaaaaaaaaaaa </button>
                                 </div>
 
 
