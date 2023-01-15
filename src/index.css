@@ -44,6 +44,9 @@
   color: white;
   background-color: #555A88;
 }
+.create:hover{
+    cursor: pointer;
+}
 
 
 .userList hr{
@@ -73,6 +76,9 @@
     border-radius: 2px;
     color: white;
     background-color: #555A88;
+}
+.page:hover{
+    cursor: pointer;
 }
 .userList ul li {
     display: flex;
