@@ -36,11 +36,23 @@ function App() {
     });
   }
  */}
+
+
+ const change =() =>{
+  swal({
+    title: "Cambios aplicados",
+    text: "",
+    icon: "success",
+    button: "Aceptar"
+
+  });
+}
+
   console.log(userList);
   return (
     <div className="App">
       {/*<button onClick={()=>usuarioEliminado()}>Eliminar usuario</button>*/}
-      <UsersForm getusers = {getusers} userSelected ={userSelected} isVisible={isVisible} setIsVisible={setIsVisible}/>
+      <UsersForm getusers = {getusers} userSelected ={userSelected} isVisible={isVisible} setIsVisible={setIsVisible} change = {change} />
       <UserList userList= {userList} getusers= {getusers} selectUser= {selectUser}   setIsVisible={setIsVisible} />
       {/* <UsersForm/> */}
       
